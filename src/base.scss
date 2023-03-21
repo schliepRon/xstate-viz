@@ -4,9 +4,10 @@
 
   &[data-viz-theme='light'] {
     --viz-color-bg: #fff;
-    --viz-color-fg: #111;
-    --viz-node-color-bg: #ddd;
-    --viz-edge-color: #111;
+    --viz-color-fg: #ffffff;
+    --viz-node-color-bg: #1b1b1b;
+    --viz-edge-color: #000000;
+    --viz-transition-color: gray;
   }
 
   &[data-viz-theme='dark'] {
@@ -14,12 +15,13 @@
     --viz-color-bg: #111;
     --viz-node-color-bg: #2d2d2d;
     --viz-edge-color: white;
+    --viz-transition-color: rgb(85, 90, 102);
   }
 
-  --viz-color-transparent: #fff6;
-  --viz-color-active: #679ae7;
+  --viz-color-transparent: rgba(255, 255, 255, 0.733);
+  --viz-color-active: #3066b8;
   --viz-border-color: var(--viz-node-color-bg);
-  --viz-border-width: 2px;
+  --viz-border-width: 5px;
   --viz-border: var(--viz-border-width) solid var(--viz-border-color);
   --viz-radius: 0.25rem;
   --viz-node-border-style: solid;
