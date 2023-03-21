@@ -2,13 +2,17 @@
   color: var(--viz-color-fg);
   display: flex;
   flex-direction: row;
-  gap: 1ch;
+  gap: 0;
   align-items: baseline;
   justify-content: flex-start;
+  font-weight: bold;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  background-color: rgba(156, 156, 156, 0.333);
+  margin-bottom: 0.2rem;
 
   &[data-viz-action] {
     &:before {
-      content: attr(data-viz-action) ' / ';
       font-size: var(--viz-font-size-sm);
       text-transform: uppercase;
       font-weight: bold;
@@ -21,8 +25,6 @@
 
 [data-viz='action-type'] {
   font-size: var(--chakra-fontSizes-xs);
-  max-width: 15ch;
   text-overflow: ellipsis;
-  overflow: hidden;
   white-space: nowrap;
 }
