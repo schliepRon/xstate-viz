@@ -133,7 +133,7 @@ function App({ isEmbedded = false }: { isEmbedded?: boolean }) {
               <SimulationProvider value={simService}>
                 <Box
                   data-testid="app"
-                  data-viz-theme="light"
+                  data-viz-theme="dark"
                   as="main"
                   display="grid"
                   gridTemplateColumns="1fr auto"

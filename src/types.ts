@@ -51,6 +51,7 @@ export interface ServiceData {
 
 export type SimulationMode = 'inspecting' | 'visualizing';
 
+
 export type EditorThemeDefinition = editor.IStandaloneThemeData & {
   name: string;
 };

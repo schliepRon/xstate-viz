@@ -17,11 +17,12 @@
 [data-viz='stateNode'] {
   color: var(--viz-color-fg);
   align-self: start;
-  opacity: calc(0.7 * (1 - var(--viz-node-active)) + var(--viz-node-active));
+  opacity: calc(1 * (1 - var(--viz-node-active)) + var(--viz-node-active));
   font-size: 1em;
   border-radius: var(--viz-radius);
   overflow: hidden;
   min-width: 15em;
+  border-color: #555;
 
   // Border in a pseudoelement to not affect positioning
   &:before {
@@ -53,6 +54,7 @@
   grid-template-columns: auto 1fr auto;
   grid-template-areas: 'type key tags';
   align-items: center;
+  min-width: 15em;
 
   > [data-viz='stateNode-key'] {
     grid-area: key;
@@ -99,7 +101,7 @@
   &::before {
     content: var(--viz-stateNode-type);
     display: block;
-    font-weight: bold;
+    font-weight: 450;
   }
 
   &[data-viz-type='final'] {
@@ -131,11 +133,11 @@
 
 [data-viz='stateNode-key'] {
   padding: 0.5rem;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 [data-viz='stateNode-keyText'] {
-  max-width: 20ch;
+  max-width: 15em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -143,6 +145,8 @@
 
 [data-viz='stateNode-actions'] {
   padding: 0.5rem;
+  text-overflow: ellipsis;
+  font-weight: 450;
 
   &:empty {
     display: none;
@@ -163,7 +167,7 @@
 [data-viz='stateNode-tag'] {
   display: inline-block;
   font-size: 0.75rem;
-  font-weight: bold;
+  font-weight: 450;
   padding: 0.25rem;
   border-radius: 0.25rem;
   background-color: #fff5;
@@ -176,10 +180,10 @@
 [data-viz='stateNode-meta'] {
   border-top: 2px solid var(--chakra-colors-whiteAlpha-300);
   padding: 0.5rem;
-  min-width: max-content;
+  min-width: 15em;
   font-size: var(--chakra-fontSizes-sm);
 
   > p {
-    max-width: 10rem;
+    max-width: 15rem;
   }
 }

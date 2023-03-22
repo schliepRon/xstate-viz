@@ -5,9 +5,9 @@
   &[data-viz-theme='light'] {
     --viz-color-bg: #fff;
     --viz-color-fg: #ffffff;
-    --viz-node-color-bg: #1b1b1b;
+    --viz-node-color-bg: #242424;
     --viz-edge-color: #000000;
-    --viz-transition-color: gray;
+    --viz-transition-color: rgb(90, 90, 90);
   }
 
   &[data-viz-theme='dark'] {
@@ -15,7 +15,7 @@
     --viz-color-bg: #111;
     --viz-node-color-bg: #2d2d2d;
     --viz-edge-color: white;
-    --viz-transition-color: rgb(85, 90, 102);
+    --viz-transition-color: rgb(83, 86, 92);
   }
 
   --viz-color-transparent: rgba(255, 255, 255, 0.733);
@@ -27,5 +27,5 @@
   --viz-node-border-style: solid;
   --viz-node-parallel-border-style: dashed;
   --viz-font-size-base: 14px;
-  --viz-font-size-sm: 12px;
+  --viz-font-size-sm: 15px;
 }

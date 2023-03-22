@@ -147,6 +147,18 @@ export const StateNodeViz: React.FC<{
               </div>
             )}
           </div>
+          
+          {description && (
+            <div data-viz="stateNode-meta">
+              <ReactMarkdown
+                components={{
+                  a: ({ node, ...props }) => <Link {...props} />,
+                }}
+              >
+                {description}
+              </ReactMarkdown>
+            </div>
+          )}
           {stateNode.definition.invoke.length > 0 && (
             <div data-viz="stateNode-invocations">
               {stateNode.definition.invoke.map((invokeDef) => {
@@ -166,17 +178,6 @@ export const StateNodeViz: React.FC<{
               {stateNode.definition.exit.map((action, index) => {
                 return <ActionViz key={index} action={action} kind="exit" />;
               })}
-            </div>
-          )}
-          {description && (
-            <div data-viz="stateNode-meta">
-              <ReactMarkdown
-                components={{
-                  a: ({ node, ...props }) => <Link {...props} />,
-                }}
-              >
-                {description}
-              </ReactMarkdown>
             </div>
           )}
         </div>

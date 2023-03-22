@@ -27,4 +27,5 @@ export const themes = {
   martianNight,
   atomOneDark,
 };
+
 export type ThemeName = keyof typeof themes;
