@@ -21,7 +21,7 @@
   font-size: 1em;
   border-radius: var(--viz-radius);
   overflow: hidden;
-  min-width: 15em;
+  min-width: 20em;
   border-color: #555;
 
   // Border in a pseudoelement to not affect positioning
@@ -146,7 +146,8 @@
 [data-viz='stateNode-actions'] {
   padding: 0.5rem;
   text-overflow: ellipsis;
-  font-weight: 450;
+  font-weight: 400;
+  font-size: var(--chakra-fontSizes-sm);
 
   &:empty {
     display: none;
@@ -167,10 +168,11 @@
 [data-viz='stateNode-tag'] {
   display: inline-block;
   font-size: 0.75rem;
-  font-weight: 450;
+  font-weight: 800;
   padding: 0.25rem;
   border-radius: 0.25rem;
-  background-color: #fff5;
+  color: rgb(43, 43, 43);
+  background-color: rgba(235, 182, 7, 0.856);
 
   & + & {
     margin-left: 1ch;
@@ -182,6 +184,7 @@
   padding: 0.5rem;
   min-width: 15em;
   font-size: var(--chakra-fontSizes-sm);
+  font-weight: 500;
 
   > p {
     max-width: 15rem;

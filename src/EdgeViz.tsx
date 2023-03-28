@@ -71,7 +71,7 @@ export const EdgeViz: React.FC<{ edge: DirectedGraphEdge; order: number }> = ({
       </defs>
       <path
         stroke="#fff4"
-        strokeWidth={2}
+        strokeWidth={2.5}
         fill="none"
         d={pathToD(roundPath(path))}
         data-viz="edge"

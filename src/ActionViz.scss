@@ -1,21 +1,23 @@
 [data-viz='action'] {
   color: var(--viz-color-fg);
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
+  flex-direction: column;
+  flex-wrap: wrap;
   gap: 0;
   align-items: baseline;
   justify-content: flex-start;
-  font-weight: 450;
-  padding: 0.2rem;
+  font-weight: 400 !important;
+  padding: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   border-radius: 0.5rem;
-  background-color: rgba(156, 156, 156, 0.333);
-  margin-bottom: 0.2rem;
+  background-color: var(--viz-action-color-bg); 
+  margin: 0.15rem;
+  font-size: var(--viz-font-size-sm);
 
   &[data-viz-action] {
     &:before {
-      font-size: var(--viz-font-size-sm);
-      text-transform: uppercase;
-      font-weight: 450;
+      font-weight: 400 !important;
       opacity: 0.8;
       display: inline-block;
       white-space: nowrap;

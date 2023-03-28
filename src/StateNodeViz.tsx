@@ -147,7 +147,7 @@ export const StateNodeViz: React.FC<{
               </div>
             )}
           </div>
-          
+
           {description && (
             <div data-viz="stateNode-meta">
               <ReactMarkdown
@@ -168,6 +168,7 @@ export const StateNodeViz: React.FC<{
           )}
           {stateNode.definition.entry.length > 0 && (
             <div data-viz="stateNode-actions" data-viz-actions="entry">
+            <p>verfügbare Befehle:</p>
               {stateNode.definition.entry.map((action, index) => {
                 return <ActionViz key={index} action={action} kind="entry" />;
               })}
