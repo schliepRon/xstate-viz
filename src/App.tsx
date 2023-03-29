@@ -16,15 +16,15 @@ import { simulationMachine } from './simulationMachine';
 import { getSourceActor, useSourceRegistryData } from './sourceMachine';
 import { theme } from './theme';
 import { EditorThemeProvider } from './themeContext';
-import { EmbedContext, EmbedMode } from './types';
+import { EmbedContext, EmbedMode, EmbedTheme } from './types';
 import { useInterpretCanvas } from './useInterpretCanvas';
 import router, { useRouter } from 'next/router';
 import { parseEmbedQuery, withoutEmbedQueryParams } from './utils';
 import { registryLinks } from './registryLinks';
 
 const defaultHeadProps = {
-  title: 'XState Visualizer',
-  ogTitle: 'XState Visualizer',
+  title: 'Lydia XState Visualizer',
+  ogTitle: 'Lydia XState Visualizer',
   description: 'Visualizer for XState state machines and statecharts',
   // TODO - get an OG image for the home page
   ogImageUrl: null,
@@ -72,6 +72,18 @@ const getGridArea = (embed?: EmbedContext) => {
   }
 
   return 'canvas panels';
+};
+
+const getVizTheme = (embed?: EmbedContext) => {
+  if (embed?.isEmbedded && embed.theme === EmbedTheme.Dark) {
+    return 'dark';
+  }
+
+  if (embed?.isEmbedded && embed.theme === EmbedTheme.Light) {
+    return 'light';
+  }
+
+  return 'dark';
 };
 
 function App({ isEmbedded = false }: { isEmbedded?: boolean }) {
@@ -133,7 +145,7 @@ function App({ isEmbedded = false }: { isEmbedded?: boolean }) {
               <SimulationProvider value={simService}>
                 <Box
                   data-testid="app"
-                  data-viz-theme="dark"
+                  data-viz-theme={getVizTheme(embed)}
                   as="main"
                   display="grid"
                   gridTemplateColumns="1fr auto"

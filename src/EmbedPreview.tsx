@@ -18,7 +18,7 @@ import {
 import { useMachine } from '@xstate/react';
 import React, { useEffect, useRef, useState } from 'react';
 import { createModel } from 'xstate/lib/model';
-import { EmbedMode, EmbedPanel, ParsedEmbed } from './types';
+import { EmbedMode, EmbedPanel, EmbedTheme, ParsedEmbed } from './types';
 import { DEFAULT_EMBED_PARAMS, makeEmbedUrl, paramsToRecord } from './utils';
 import { send, assign, ContextFrom } from 'xstate';
 import { Overlay } from './Overlay';
@@ -73,9 +73,10 @@ const embedPreviewModel = createModel(
       panel: EmbedPanel.Code,
       readOnly: true,
       showOriginalLink: true,
-      controls: false,
-      pan: false,
-      zoom: false,
+      controls: true,
+      pan: true,
+      zoom: true,
+      theme: EmbedTheme.Dark,
     } as ParsedEmbed,
   },
   {

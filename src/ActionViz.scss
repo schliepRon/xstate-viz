@@ -1,12 +1,12 @@
 [data-viz='action'] {
-  color: var(--viz-color-fg);
+  color: var(--viz-node-color-fg);
   display: inline-block;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 0;
   align-items: baseline;
   justify-content: flex-start;
-  font-weight: 400 !important;
+  font-weight:var(--viz-action-weight);
   padding: 0.25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -18,7 +18,7 @@
   &[data-viz-action] {
     &:before {
       font-weight: 400 !important;
-      opacity: 0.8;
+      opacity: 1;
       display: inline-block;
       white-space: nowrap;
     }

@@ -5,26 +5,34 @@
   &[data-viz-theme='light'] {
     --viz-color-bg: #fff;
     --viz-color-fg: #0f0f0ff5;
-    --viz-node-color-bg: #ccd1d4;
+    --viz-node-color-fg-inactive: #0f0f0ff5;
+    --viz-node-color-fg-active: #fffffff5;
+    --viz-node-color-bg-active: #1e52a0;
+    --viz-node-color-bg-inactive: #b3bdc4;
     --viz-edge-color: #000000;
-    --viz-transition-color: rgb(90, 90, 90);
-    --viz-action-color-bg: rgba(102, 101, 101, 0.333);
-    --viz-border-color: #8b8b8b;
+    --viz-transition-color: rgb(86, 96, 107);
+    --viz-action-color-bg-active: rgba(23, 31, 36, 0.514);
+    --viz-action-color-bg-inactive: rgba(86, 96, 107, 0.582);
+    --viz-border-color:  #76828b;
   }
 
   &[data-viz-theme='dark'] {
     --viz-color-fg: #fff;
+    --viz-node-color-fg-inactive: #fff;
+    --viz-node-color-fg-active: #fffffff5;
     --viz-color-bg: #111111;
-    --viz-node-color-bg: #3a3a3b;
+    --viz-node-color-bg-inactive: #3a3a3b;
+    --viz-node-color-bg-active: #1e52a0;
     --viz-edge-color: white;
     --viz-transition-color: #555557;
-    --viz-action-color-bg: rgba(0, 0, 0, 0.466);
-    --viz-border-color: var(--viz-node-color-bg);
+    --viz-action-color-bg-active:  rgba(0, 0, 0, 0.466);
+    --viz-action-color-bg-inactive:  rgba(0, 0, 0, 0.466);
+    --viz-border-color: #4a4a4b;
   }
 
   --viz-color-transparent: rgba(255, 255, 255, 0.733);
-  --viz-color-active: #3066b8;
-  --viz-border-width: 5px;
+  --viz-color-active: #1e52a0;
+  --viz-border-width: 3px;
   --viz-border: var(--viz-border-width) solid var(--viz-border-color);
   --viz-radius: 0.25rem;
   --viz-node-border-style: solid;

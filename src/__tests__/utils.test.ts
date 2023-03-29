@@ -1,4 +1,4 @@
-import { EmbedMode, EmbedPanel } from '../types';
+import { EmbedMode, EmbedPanel, EmbedTheme } from '../types';
 import * as utils from '../utils';
 
 describe('utils', () => {
@@ -13,6 +13,7 @@ describe('utils', () => {
           zoom: true,
           showOriginalLink: false,
           controls: true,
+          theme: EmbedTheme.Dark,
         }),
       ).toBe(
         'https://stately.ai/viz/embed/source_id?mode=panels&panel=events&readOnly=0&pan=0&zoom=1&showOriginalLink=0&controls=1',
@@ -44,6 +45,7 @@ describe('utils', () => {
       'controls',
       'showOriginalLink',
       'readOnly',
+      'theme',
     ].forEach((q) => {
       it.todo(`removes ${q} from the url`);
     });

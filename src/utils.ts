@@ -17,6 +17,7 @@ import {
   AnyStateMachine,
   EmbedMode,
   EmbedPanel,
+  EmbedTheme,
   ParsedEmbed,
 } from './types';
 
@@ -207,9 +208,10 @@ export const DEFAULT_EMBED_PARAMS: ParsedEmbed = {
   panel: EmbedPanel.Code,
   showOriginalLink: true,
   readOnly: true,
-  pan: false,
-  zoom: false,
-  controls: false,
+  pan: true,
+  zoom: true,
+  controls: true,
+  theme: EmbedTheme.Dark,
 };
 export const parseEmbedQuery = (query?: NextRouter['query']): ParsedEmbed => {
   const parsedEmbed = DEFAULT_EMBED_PARAMS;
@@ -262,6 +264,13 @@ export const parseEmbedQuery = (query?: NextRouter['query']): ParsedEmbed => {
     parsedEmbed.controls = computeBooleanQParamValue(parsedControls);
   }
 
+  if (query?.theme) {
+    const parsedTheme = getQueryParamValue(query?.theme);
+    if (Object.values(EmbedTheme).includes(parsedTheme as EmbedTheme)) {
+      parsedEmbed.theme = parsedTheme as EmbedTheme;
+    }
+  }
+
   return parsedEmbed;
 };
 
@@ -282,6 +291,7 @@ export function withoutEmbedQueryParams(query: any): string {
     'zoom',
     'controls',
     'readOnly',
+    'theme',
   ].forEach((key) => {
     q.delete(key);
   });

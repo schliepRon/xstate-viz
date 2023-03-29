@@ -1,4 +1,4 @@
-import { EmbedMode, EmbedPanel } from '../../src/types';
+import { EmbedMode, EmbedPanel, EmbedTheme } from '../../src/types';
 
 const sourceFileFixture = {
   id: 'source-file-id',
@@ -60,6 +60,7 @@ describe('Embedded mode', () => {
       cy.visitEmbedWithNextPageProps({
         sourceFile: sourceFileFixture,
         mode: EmbedMode.Panels,
+        theme: EmbedTheme.Dark,
       });
       cy.getPanelsView().should('be.visible');
     });
@@ -67,6 +68,7 @@ describe('Embedded mode', () => {
       cy.visitEmbedWithNextPageProps({
         sourceFile: sourceFileFixture,
         mode: EmbedMode.Panels,
+        theme: EmbedTheme.Dark,
       });
       cy.findByRole('tab', { name: /code/i }).should(
         'have.attr',
@@ -95,6 +97,7 @@ describe('Embedded mode', () => {
       cy.visitEmbedWithNextPageProps({
         sourceFile: sourceFileFixture,
         mode: EmbedMode.Panels,
+        theme: EmbedTheme.Dark,
         readOnly: false,
       });
       const editor = cy.getMonacoEditor();
@@ -106,6 +109,7 @@ describe('Embedded mode', () => {
         sourceFile: sourceFileFixture,
         mode: EmbedMode.Panels,
         panel: EmbedPanel.State,
+        theme: EmbedTheme.Dark,
       });
       cy.findByRole('tab', { name: /state/i }).should(
         'have.attr',
@@ -119,6 +123,7 @@ describe('Embedded mode', () => {
         sourceFile: sourceFileFixture,
         mode: EmbedMode.Panels,
         showOriginalLink: false,
+        theme: EmbedTheme.Dark,
       });
       cy.findByRole('link', { name: /open in stately\.ai\/viz/i }).should(
         'not.exist',
@@ -128,6 +133,7 @@ describe('Embedded mode', () => {
       cy.visitEmbedWithNextPageProps({
         sourceFile: sourceFileFixture,
         mode: EmbedMode.Panels,
+        theme: EmbedTheme.Dark,
       });
       cy.contains('button', /visualize/i).should('not.exist');
     });
@@ -136,6 +142,7 @@ describe('Embedded mode', () => {
         sourceFile: sourceFileFixture,
         mode: EmbedMode.Panels,
         readOnly: false,
+        theme: EmbedTheme.Dark,
       });
       cy.findByRole('button', { name: /visualize/i }).should('be.visible');
     });
@@ -143,6 +150,7 @@ describe('Embedded mode', () => {
       cy.visitEmbedWithNextPageProps({
         sourceFile: sourceFileFixture,
         mode: EmbedMode.Panels,
+        theme: EmbedTheme.Dark,
       });
       [/new/i, /login to fork/i].forEach((text) => {
         cy.contains('button', text).should('not.exist');
@@ -158,6 +166,7 @@ describe('Embedded mode', () => {
       cy.visitEmbedWithNextPageProps({
         sourceFile: sourceFileFixture,
         mode: EmbedMode.Full,
+        theme: EmbedTheme.Dark,
       });
     });
     it('should show both canvas and panels', () => {

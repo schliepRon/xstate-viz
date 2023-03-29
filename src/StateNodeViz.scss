@@ -1,12 +1,20 @@
 [data-viz='stateNodeGroup'] {
   --viz-node-border-color: var(--viz-border-color);
+  --viz-node-color-bg: var(--viz-node-color-bg-inactive);
+  --viz-node-color-fg: var(--viz-node-color-fg-inactive);
   --viz-node-active: 0;
   --viz-transition-color: #555;
+  --viz-action-weight: 500;
+  --viz-action-color-bg: var(--viz-action-color-bg-inactive);
 
   &[data-viz-active] {
     --viz-node-border-color: var(--viz-color-active);
+    --viz-node-color-bg: var(--viz-node-color-bg-active);
+    --viz-node-color-fg: var(--viz-node-color-fg-active);
     --viz-node-active: 1;
     --viz-transition-color: var(--viz-color-active);
+    --viz-action-weight: 500;
+    --viz-action-color-bg: var(--viz-action-color-bg-active);
   }
 
   &[data-viz-previewed]:not([data-viz-active]) {
@@ -15,7 +23,7 @@
 }
 
 [data-viz='stateNode'] {
-  color: var(--viz-color-fg);
+  color: var(--viz-node-color-fg);
   align-self: start;
   opacity: calc(1 * (1 - var(--viz-node-active)) + var(--viz-node-active));
   font-size: 1em;
@@ -67,6 +75,7 @@
 
 [data-viz='stateNode-content'] {
   background: var(--viz-node-color-bg);
+  color: var(--viz-node-color-fg);
 
   &:empty {
     display: none;
@@ -144,6 +153,7 @@
 }
 
 [data-viz='stateNode-actions'] {
+  color: var(--viz-node-color-fg);
   padding: 0.5rem;
   text-overflow: ellipsis;
   font-weight: 400;
@@ -168,7 +178,7 @@
 [data-viz='stateNode-tag'] {
   display: inline-block;
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 750;
   padding: 0.25rem;
   border-radius: 0.25rem;
   color: rgb(43, 43, 43);

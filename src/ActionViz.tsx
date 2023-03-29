@@ -66,7 +66,7 @@ export const RaiseActionLabel: React.FC<{
 }> = ({ action }) => {
   return (
     <ActionType>
-      <strong>raise</strong> {action.event}
+      <p>raise</p> {action.event}
     </ActionType>
   );
 };
@@ -77,17 +77,17 @@ export const SendActionLabel: React.FC<{
   if (!action.event) {
     return (
       <ActionType>
-        <strong>send</strong> <em>unknown</em>
+        <p>send</p> <em>unknown</em>
       </ActionType>
     );
   }
 
   const actionLabel =
     action.event.type === 'xstate.update' ? (
-      <strong>send update</strong>
+      <p>send update</p>
     ) : (
       <>
-        <strong>send</strong> {action.event.type}
+        <p>send</p> {action.event.type}
       </>
     );
   const actionTo = action.to ? (
@@ -114,7 +114,7 @@ export const LogActionLabel: React.FC<{
 }> = ({ action }) => {
   return (
     <ActionType>
-      <strong>log</strong> {action.label}
+      <p>log</p> {action.label}
     </ActionType>
   );
 };
@@ -124,7 +124,7 @@ export const CancelActionLabel: React.FC<{
 }> = ({ action }) => {
   return (
     <ActionType>
-      <strong>cancel</strong> {action.sendId}
+      <p>cancel</p> {action.sendId}
     </ActionType>
   );
 };
@@ -134,7 +134,7 @@ export const StopActionLabel: React.FC<{
 }> = ({ action }) => {
   return (
     <ActionType>
-      <strong>stop</strong>{' '}
+      <p>stop</p>{' '}
       {typeof action.activity === 'object' && 'id' in action.activity ? (
         action.activity.id
       ) : (
@@ -149,7 +149,7 @@ export const AssignActionLabel: React.FC<{
 }> = ({ action }) => {
   return (
     <ActionType>
-      <strong>assign</strong>{' '}
+      <p>assign</p>{' '}
       {typeof action.assignment === 'object' ? (
         Object.keys(action.assignment).join(', ')
       ) : (
@@ -164,7 +164,7 @@ export const ChooseActionLabel: React.FC<{
 }> = () => {
   return (
     <ActionType>
-      <strong>choose</strong>
+      <p>choose</p>
       {/* TODO: recursively add actions/guards */}
     </ActionType>
   );
@@ -181,7 +181,7 @@ export const CustomActionLabel: React.FC<{
 
   return (
     <ActionType>
-      {label === 'anonymous' ? <em>anonymous</em> : <strong>{label}</strong>}
+      {label === 'anonymous' ? <em>anonymous</em> : <p>{label}</p>}
     </ActionType>
   );
 };

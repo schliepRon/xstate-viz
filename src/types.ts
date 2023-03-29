@@ -61,6 +61,10 @@ export enum EmbedMode {
   Panels = 'panels',
   Full = 'full',
 }
+export enum EmbedTheme {
+  Dark = 'dark',
+  Light = 'light',
+}
 export enum EmbedPanel {
   Code = 'code',
   State = 'state',
@@ -76,6 +80,7 @@ export interface ParsedEmbed {
   pan: boolean;
   zoom: boolean;
   controls: boolean;
+  theme: EmbedTheme;
 }
 export type EmbedContext =
   | { isEmbedded: false }

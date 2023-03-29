@@ -24,8 +24,8 @@ export const InitialEdgeViz: React.FC<{ node: DirectedGraphNode }> = ({
   };
 
   const startPoint: Point = {
-    x: endPoint.x - 5,
-    y: endPoint.y - 10,
+    x: endPoint.x - 15,
+    y: endPoint.y - 20,
   };
 
   const markerId = `n${Math.floor(Math.random() * 1000)}`;
@@ -37,7 +37,7 @@ export const InitialEdgeViz: React.FC<{ node: DirectedGraphNode }> = ({
       </defs>
       <circle
         data-viz="initialEdge-circle"
-        r="4"
+        r="8"
         cx={startPoint.x}
         cy={startPoint.y}
         fill="var(--stroke)"
@@ -46,9 +46,9 @@ export const InitialEdgeViz: React.FC<{ node: DirectedGraphNode }> = ({
         data-viz="edge"
         d={`M ${startPoint.x},${startPoint.y} Q ${startPoint.x},${endPoint.y} ${
           endPoint.x
-        },${endPoint.y} L ${endPoint.x + 1}, ${endPoint.y}`}
+        },${endPoint.y} L ${endPoint.x + 3}, ${endPoint.y}`}
         stroke="var(--stroke)"
-        strokeWidth={2}
+        strokeWidth={3}
         fill="none"
         markerEnd={`url(#${markerId})`}
         pathLength={1}
