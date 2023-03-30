@@ -22,7 +22,7 @@ export type StateFrom<T> = T extends StateMachine<
 
 export type AnyState = State<any, any>;
 
-export type SourceProvider = 'gist' | 'registry';
+export type SourceProvider = 'gist' | 'registry' | 'local';
 
 export interface SourceRegistryData extends SourceFile {
   // we can't trust SSR data to be accurate because at the moment we can use authenticated user during SSR
