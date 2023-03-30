@@ -694,7 +694,7 @@ export const makeSourceMachine = (params: {
           switch (ctx.sourceProvider) {
             case 'local':
               const localResponse = await fetch(
-                './' + ctx.sourceID + '.js');
+                './statemachines/' + ctx.sourceID + '.js');
 
                 if (localResponse.status === 404) {
                   return Promise.reject(new NotFoundError('File not found'));
